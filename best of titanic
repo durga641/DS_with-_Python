@@ -1,0 +1,54 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Aug  1 07:44:05 2018
+
+@author: Venkat Durga Rao
+"""
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as pt
+import os
+from collections import Counter
+
+### Read titianic data
+os.chdir("E:\\titanic")
+train=pd.read_csv("titanic_train.csv")
+train=pd.read_csv("titanic_train.csv")
+print(list(train))
+train_id=train[["PassengerId"]]  ## Double brackets return data frame bur singlel bracker returns series
+print(type(train_id))
+
+#### OUTLIER DETEECTION
+
+Q1=np.percentile(train['Fare'],25)
+Q2=np.percentile(train['Fare'],50)
+Q3=np.percentile(train['Fare'],75)
+Q4=np.percentile(train['Fare'],100)
+
+
+IQR=Q3-Q1  ### Inter quartile range
+
+outlier_step=1.5*IQR
+
+outlier_indices=[]
+print()
+print(Q1,Q2,Q3,Q4,IQR,outlier_step)
+df=train
+ outlier_list_col = df[(df['Fare'] < Q1 - outlier_step) | (df['Fare'] > Q3 + outlier_step )].index
+ 
+ print(list(outlier_list_col))
+ outlier_indices.extend(outlier_list_col)
+ print(Counter(outlier_indices))
+ 
+ multiple_outliers = list( k for k, v in outlier_indices.items() if v > n )
+
+ 
+ 
+ ##df[df['Fare']>514].index
+ 
+ ###### print((df['Fare'] < Q1 - outlier_step))
+ ###### print (True&False)
+
+print(Q1-outlier_step)
+
