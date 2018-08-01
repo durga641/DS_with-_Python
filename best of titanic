@@ -33,15 +33,21 @@ outlier_step=1.5*IQR
 
 outlier_indices=[]
 print()
-print(Q1,Q2,Q3,Q4,IQR,outlier_step)
-df=train
  outlier_list_col = df[(df['Fare'] < Q1 - outlier_step) | (df['Fare'] > Q3 + outlier_step )].index
  
  print(list(outlier_list_col))
  outlier_indices.extend(outlier_list_col)
- print(Counter(outlier_indices))
+ outlier_indices = Counter(outlier_indices)  
+ print(outlier_indices)
+ 
+ n=2
  
  multiple_outliers = list( k for k, v in outlier_indices.items() if v > n )
+ 
+ print(multiple_outliers)
+ 
+ 
+ outlier_indices.items()
 
  
  
