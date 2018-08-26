@@ -1,0 +1,38 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Aug 26 13:49:12 2018
+
+@author: Venkat Durga Rao
+"""
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as pt
+import os
+from collections import Counter
+import seaborn as sns  
+
+
+### Read titianic data
+os.chdir("E:\\titanic")
+train=pd.read_csv("titanic_train.csv")
+test=pd.read_csv("titanic_test.csv")
+
+
+sns.countplot('Pclass',data=train)
+sns.countplot('Sex',data=train)
+sns.boxplot(y='Age',data=train)
+sns.violinplot(x='Pclass',y='Age',data=train)
+
+
+sns.swarmplot(x='Pclass',y='Fare',data=train)
+
+sns.swarmplot(x='Pclass',y='Fare',hue='Survived',data=train,palette='husl')
+
+f,ax = pt.subplots(3,4,figsize=(20,16))
+
+sns.distplot(train[train['Survived']==0]['Age'].dropna(),kde=False,color='r',bins=5)
+sns.distplot(train[train['Survived']==1]['Age'].dropna(),kde=False,color='g',bins=5)
+
+
+ sns.regplot(x="Age", y="Fare", data=train)
