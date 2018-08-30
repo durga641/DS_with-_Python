@@ -1,0 +1,20 @@
+disjoints : the events cant happen simultaneously 
+eg : 5 and 3 cant get when a die is thrown
+
+independent events : probability of one event wont impact the probability of other 
+
+in that p(A ^ B ) =p(A) * p(B) 
+
+dependent events : first event will change the probability of second evevnt
+
+Mutually exclusive and exhaustive events :
+
+Mutually exclusive events are those events where two events cannot happen together.
+
+The easiest example to understand this is the toss of a coin. Getting a head and a tail are mutually exclusive because we can either get heads
+ or tails but never both at the same in a single coin toss.
+
+A set of events is collectively exhaustive when the set should contain all the possible outcomes of the experiment.
+ One of the events from the list must occur for sure when the experiment is performed.
+ 
+ find the difference between disjoint and mutually exclusive events?
