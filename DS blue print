@@ -1,0 +1,37 @@
+Data science blue print
+
+stage 1 : skilled chef,fresh ingredients ,dont over cook the model 
+
+stage 2 : EDA
+gain the valuable hints for data cleansing
+ideas for feature engineering
+Don’t skip this step, but don’t get stuck on it either. thousand of charts can be done here
+study correlation
+identify sparse classes in category variable,may cause overfitting
+analyze max,min,median..values ,outlier columns
+
+stage 3 : FE
+
+infuse domain knowledge to create custmized features such as indicators 
+create interactive features ,such as build new feature by combing two or more features .
+combine sparse classes into one thing..which will reduce no of columns in while one hot encoding
+cardinality is high for categorical variables ,form mini groups based on correclation with target variable
+remove redundant feautress, high variance,feautres contains same value for all observations,id and descriptive columns
+drop the engineered features if they dont help to improve the model
+
+
+stage 4 :data cleansing
+
+drop duplicate and irrelavant observations
+fix strucural,typo errors and standadize the data to avoid sparse classes
+drop outliers
+impute missing values some times missing values can be filled with value "missing" as missing also information given to model
+if number values are missing they can be imputed using highly correlated fields  or simpley fill with zero 
+if missing vlaues are so high then dropping of column also can be considered
+
+NumPy for efficient numerical computations.
+Pandas for data management.
+Scikit-Learn for algorithms and model training.
+Seaborn for easy/common visualizations.
+Matplotlib to customize visualizations.
+
