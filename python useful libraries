@@ -1,0 +1,19 @@
+What are the Python libraries that are used by data scientists?
+Yassine Alouini
+Yassine Alouini, I have written data science pipelines using Python libraries
+Updated Dec 26, 2017 · Upvoted by Alket Cecaj, PhD in computer science and data mining
+Here is a (non-exhaustive) list of packages that I often use:
+
+Pandas[1] for data loading, cleaning, and quick exploration
+Numpy[2] for (n-dimensional) array manipulation
+Statsmodels[3] for statistical modelling
+Scikit-learn[4] for (genera purpose) machine learning
+Keras[5] for deep learning models
+XGBoost[6] for gradient boosted trees
+Matplotlib[7] for visualisation
+Seaborn[8] for statistical visualisation
+Bokeh[9] for interactive visualisation
+Jupyter[10] notebook for prototyping
+Ipython[11] for quicker prototyping
+Dask[12] for distributed and out-of-core data manipulation
+(Mini)Conda[13] for package and environment management
