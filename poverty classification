@@ -1,0 +1,61 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Aug 26 13:49:12 2018
+
+@author: Venkat Durga Rao
+"""
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as pt
+import os
+from collections import Counter
+import seaborn as sns  
+
+
+### Read titianic data
+os.chdir("E:\\titanic")
+train=pd.read_csv("titanic_train.csv")
+test=pd.read_csv("titanic_test.csv")
+full_data= pd.concat([train,test])
+
+sns.countplot('Pclass',data=train)
+sns.countplot('Sex',data=train)
+sns.boxplot(y='Age',data=train)
+sns.violinplot(x='Pclass',y='Age',data=train)
+
+
+sns.swarmplot(x='Pclass',y='Fare',data=train)
+
+sns.swarmplot(x='Pclass',y='Fare',hue='Survived',data=train,palette='husl')
+
+f,ax = pt.subplots(3,4,figsize=(20,16))
+
+sns.distplot(train[train['Survived']==0]['Age'].dropna(),kde=True,color='r',bins=10)
+sns.distplot(train[train['Survived']==1]['Age'].dropna(),kde=False,color='g',bins=5)
+
+
+ sns.regplot(x="Age", y="Fare", data=train)
+ 
+ dataset=[]
+ for dataset in full_data:
+    full_data['Name_length'] = train['Name'].apply(len)
+    # Qcut is a quantile based discretization function to autimatically create categories
+    # dataset['Name_length'] = pd.qcut(dataset['Name_length'], 6, labels=False)
+    # train['Name_length'].value_counts()
+
+sum_Name = train[["Name_length", "Survived"]].groupby(['Name_length'],as_index=False).sum()
+average_Name = train[["Name_length", "Survived"]].groupby(['Name_length'],as_index=False).mean()
+fig, (axis1,axis2,axis3) = plt.subplots(3,1,figsize=(18,6))
+ 
+ 
+
+sns.barplot(x='Name_length', y='Survived', data=average_Name, )
+sns.pointplot(x = 'Name_length', y = 'Survived', data=train, ax = axis3)
+
+a = sns.FacetGrid( train, row='Pclass', col='Embarked',aspect=6 )
+a.map(sns.kdeplot, 'Age', shade= True )
+a.set(xlim=(0 , train['Age'].max()))
+a.add_legend()
+
+
