@@ -24,6 +24,7 @@ sns.countplot('Sex',data=train)
 sns.boxplot(y='Age',data=train)
 sns.violinplot(x='Pclass',y='Age',data=train)
 
+data['platform_type'].value_counts().plot(kind='bar')
 
 sns.swarmplot(x='Pclass',y='Fare',data=train)
 
