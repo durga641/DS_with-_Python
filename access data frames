@@ -1,4 +1,10 @@
 
+os.chdir("D:\Data Science\costatica_poverty_class")
+
+#print  ('DURGA U ROCKS')
+
+## READ THE TEST & TRAIN DATA
+
 train=pd.read_csv("train.csv")
 test=pd.read_csv("test.csv")
 t1=train[['edjefa']]
@@ -11,3 +17,5 @@ type(train[:3]['edjefa'])
 
 train[0:3][:4]['edjefa', 'edjefa']
 train[0:4][]
+type(train.edjefa)
+
