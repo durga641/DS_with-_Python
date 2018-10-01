@@ -1,0 +1,13 @@
+
+train=pd.read_csv("train.csv")
+test=pd.read_csv("test.csv")
+t1=train[['edjefa']]
+type(t1.iloc[1:5])
+type(train.iloc[1:5])
+type(train['edjefa'])
+
+train[['edjefa', 'edjefa']][:3]
+type(train[:3]['edjefa'])
+
+train[0:3][:4]['edjefa', 'edjefa']
+train[0:4][]
